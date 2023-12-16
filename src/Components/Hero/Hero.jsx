@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import hero from "../../assests/Hero-1.jpg";
+import myContext from "../../Context/Context";
 function Hero() {
+  const context = useContext(myContext);
+  const { mode } = context;
   return (
-    <div className=" flex justify-between flex-row px-4 py-6 bg-slate-600 text-gray-300 ">
+    <div
+      className=" flex justify-between flex-row px-4 py-6 bg-slate-600 text-gray-300 "
+      style={{
+        backgroundColor: mode === "dark" ? "#000" : "",
+        color: mode === "dark" ? "white" : "",
+      }}
+    >
       <div className="flex flex-col items-center  px-4 py-6 mt-7 mr-6 ml-9">
         <h1 className="text-3xl font-bold font-mono">Hello I'm </h1>
         <h1 className="text-6xl font-semibold  mt-3">Nitik</h1>

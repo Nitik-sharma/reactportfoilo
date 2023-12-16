@@ -1,18 +1,33 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { FiMenu } from "react-icons/fi";
 import { MdClose } from "react-icons/md";
+import { CiLight } from "react-icons/ci";
+import { MdDarkMode } from "react-icons/md";
+import myContext from "../../Context/Context";
 
 function Navbar() {
+  const context = useContext(myContext);
   const [open, setOpen] = useState(false);
   const handleOpen = () => {
     setOpen(!open);
   };
+  const { mode, toggleBtn } = context;
+
   return (
     <div>
-      <div className=" relative flex justify-between items-center bg-red-500 text-slate-200">
+      <div
+        className=" relative flex justify-between items-center bg-red-500 text-slate-200"
+        style={{
+          backgroundColor: mode === "dark" ? "#000" : "",
+          color: mode === "dark" ? "white" : "",
+        }}
+      >
         <h1 className=" text-2xl md:text-4xl font-my font-semibold px-3 py-4">
           Nitik
         </h1>
+        <div onClick={toggleBtn}>
+          {mode === "light" ? <CiLight size={60} /> : <MdDarkMode size={60} />}
+        </div>
         <div>
           <ul className="  justify-between items-center  gap-3 mr-3 hidden md:flex">
             <li className=" text-2xl font-bold hover:text-blue-500 duration-200">
