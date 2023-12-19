@@ -2,14 +2,17 @@ import React, { useContext } from "react";
 
 function About() {
   return (
-    <div className="w-full  px-4 py-5 bg-gradient-to-b from-slate-500 to-slate-900 text-gray-100">
+    <div
+      name="About"
+      className="w-full  px-4 py-5 bg-gradient-to-b from-slate-700 to-slate-900 text-gray-100"
+    >
       <div>
         <div>
           <p className="text-xl md:text-5xl font-bold border-b-4 border-gray-500  w-36 text-center ml-14   ">
             About
           </p>
         </div>
-        <p className=" px-16 py-11 text-2xl font-semibold ">
+        <p className=" px-4 py-5 md:px-20 md:py-16 text-xl md:2xl font-semibold ">
           Hello there! I'm Nitik, an aspiring front-end developer ready to make
           my mark in the digital landscape. Armed with a fresh perspective and
           an insatiable curiosity for code, I am passionate about crafting
@@ -26,7 +29,7 @@ function About() {
           projects.
         </p>
         <br />
-        <p className=" px-16 py-11 text-2xl font-semibold ">
+        <p className=" px-4 py-5 md:px-20 md:py-16 text-xl md:2xl font-semibold ">
           Beyond the code, I'm fueled by a passion for design aesthetics and
           user experience. I understand the importance of translating creative
           visions into functional and visually captivating interfaces. Join me

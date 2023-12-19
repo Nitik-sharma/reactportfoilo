@@ -68,7 +68,7 @@ function Experience() {
   ];
   return (
     <div
-      name="experience"
+      name="Experience"
       className=" bg-gradient-to-b from-black to-gray-800  text-gray-300 w-full h-full"
     >
       <div className=" px-20 py-16 text-start">
@@ -80,7 +80,7 @@ function Experience() {
             These are the technologies I've worked with
           </p>
         </div>
-        <div className=" w-full grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <div className=" w-full grid sm:grid-cols-2 md:grid-cols-3 gap-4 items-center">
           {skiils.map(({ id, img, title, style }) => (
             <div
               className={` border-2 border-gray-400 shadow-lg   rounded-lg w-52 flex flex-col items-center ${style} `}

@@ -1,8 +1,10 @@
 import React, { useContext, useState } from "react";
 import { FiMenu } from "react-icons/fi";
 import { MdClose } from "react-icons/md";
+import { Link } from "react-scroll";
 
 function Navbar() {
+  const links = ["Home", "About", "Portfolio", "Experience", "Contact"];
   const [open, setOpen] = useState(false);
   const handleOpen = () => {
     setOpen(!open);
@@ -17,21 +19,16 @@ function Navbar() {
 
         <div>
           <ul className="  justify-between items-center  gap-3 mr-3 hidden md:flex">
-            <li className=" text-2xl font-bold hover:text-blue-500 duration-200">
-              Home
-            </li>
-            <li className=" text-2xl font-bold hover:text-blue-500 duration-200">
-              About
-            </li>
-            <li className="  text-2xl  font-bold hover:text-blue-500 duration-200">
-              Portfolio
-            </li>
-            <li className=" text-2xl font-bold hover:text-blue-500 duration-200">
-              Experience
-            </li>
-            <li className=" text-2xl font-bold hover:text-blue-500 duration-200">
-              Contact{" "}
-            </li>
+            {links.map((link, index) => (
+              <li
+                key={index}
+                className=" text-2xl font-bold hover:text-blue-500 duration-200"
+              >
+                <Link to={link} smooth duration={500}>
+                  {link}
+                </Link>
+              </li>
+            ))}
           </ul>
           {/* For mobile design */}
           <div
@@ -43,21 +40,21 @@ function Navbar() {
           {open && (
             <div className=" absolute right-0 top-14 w-72 h-scree bg-gray-800 px-6 py-10">
               <ul className="flex flex-col gap-6  justify-between items-center   mr-3  md:hidden">
-                <li className="  text-4xl  font-bold hover:text-blue-500 duration-200">
-                  Home
-                </li>
-                <li className="  text-4xl  font-bold hover:text-blue-500 duration-200">
-                  About
-                </li>
-                <li className="  text-4xl  font-bold hover:text-blue-500 duration-200">
-                  Portfolio
-                </li>
-                <li className="  text-4xl  font-bold hover:text-blue-500 duration-200">
-                  Experience
-                </li>
-                <li className="  text-4xl  font-bold hover:text-blue-500 duration-200">
-                  Contact{" "}
-                </li>
+                {links.map((link, index) => (
+                  <li
+                    key={index}
+                    className="  text-4xl  font-bold hover:text-blue-500 duration-200"
+                  >
+                    <Link
+                      onClick={() => setOpen(!open)}
+                      to={link}
+                      smooth
+                      duration={500}
+                    >
+                      {link}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
           )}

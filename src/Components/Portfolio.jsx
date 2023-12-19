@@ -48,7 +48,7 @@ function Portfolio() {
   ];
   return (
     <div
-      name="portfolio"
+      name="Portfolio"
       className=" bg-gradient-to-b from-black to-gray-800  text-gray-300 w-full h-full"
     >
       <div className=" px-20 py-16 text-start">
